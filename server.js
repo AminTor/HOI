@@ -8,17 +8,19 @@ var Start = function(route, serve, reqtype) {
     var onRequest = function(request, response) {
 
         // Extracts the pathname from the url
+	console.log ("failing here:1");
         var pathname = url.parse(request.url).pathname;
 
         // Removes the starting "/". If this fails, then that means the request
         // was without
         // the "/", and so does not affect it.
+	console.log("failing here :2");
         try {
             pathname = pathname.substring(1, pathname.length);
         } catch (err) {
 
         }
-
+	console.log("failing here :3");
         // Responds to all requests apart from that for favicon.ico
         if (pathname !== "favicon.ico") {
 
